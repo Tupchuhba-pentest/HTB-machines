@@ -37,9 +37,12 @@ gobuster dir -u  http://IP-цели -w /usr/share/wordlists/dirb/common.txt
 Зайдя в msfconsole, проверим наличие данной cve командой:
 
 '''msf
+
 search CVE-2025-32432
 
 ![msf](image/msf.jpg)
+
+Используем эту cve и устонавливаем параметры RHOSTS URL-страницы с /admin/login и LHOST наш IP и командой "run" мы получаем сессию meterpreter
 
 ##Повышение привилегий (PrivEsc)
 
