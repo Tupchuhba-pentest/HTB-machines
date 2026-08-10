@@ -48,6 +48,14 @@ search CVE-2025-32432
 
 ##Повышение привилегий (PrivEsc)
 
+Перейдём из meterpreter в обычный shell вписав "shell"
+
+Нам нужно стабилизировать оболочку.Для этого выполним команду:
+
+'''meterpreter>
+
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+
 
 
 ##Тупики (DeadEnds)
