@@ -44,6 +44,8 @@ search CVE-2025-32432
 
 Используем эту cve и устонавливаем параметры RHOSTS URL-страницы с /admin/login и LHOST наш IP и командой "run" мы получаем сессию meterpreter
 
+![session](image/session.jpg)
+
 ##Повышение привилегий (PrivEsc)
 
 
