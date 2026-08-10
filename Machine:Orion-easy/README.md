@@ -39,7 +39,7 @@ gobuster dir -u  http://IP-цели -w /usr/share/wordlists/dirb/common.txt
 '''msf
 search CVE-2025-32432
 
-![msf](image/.jpg)
+![msf](image/msf.jpg)
 
 ##Повышение привилегий (PrivEsc)
 
