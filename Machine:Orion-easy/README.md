@@ -27,6 +27,7 @@ gobuster dir -u  http://IP-цели -w /usr/share/wordlists/dirb/common.txt
 
 Мы видим код ошиибки 302,говорящий нам о существовании папки /admin.При переходе в неё на сайте нас автоматически перекидывает в папку /login, где есть так же указана версия CraftCMS:
 
+![Сайт](image/web.jpg)
 
 
 ##Эксплуатация (Exploitation)
