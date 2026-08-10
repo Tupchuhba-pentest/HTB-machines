@@ -32,7 +32,14 @@ gobuster dir -u  http://IP-цели -w /usr/share/wordlists/dirb/common.txt
 
 ##Эксплуатация (Exploitation)
 
+Зная версию CraftCMS, проверим в интернете нет ли на неё каки-нибудь CVE. И видим что на неё есть "CVE-2025-32432"
 
+Зайдя в msfconsole, проверим наличие данной cve командой:
+
+'''msf
+search CVE-2025-32432
+
+![msf](image/.jpg)
 
 ##Повышение привилегий (PrivEsc)
 
