@@ -21,7 +21,7 @@ nmap -sC -sV Ip-цели
 gobuster dir -u  http://IP-цели -w /usr/share/wordlists/dirb/common.txt
 
 
-![Результат сканирования Gobuster]()
+![Результат сканирования Gobuster](image/gobuster.jpg)
 
 
 ##Эксплуатация (Exploitation)
