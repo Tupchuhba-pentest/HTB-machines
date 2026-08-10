@@ -6,4 +6,9 @@
 
 ##Разведка (Recon)
 
+Запускаем nmap сканирование:
 
+'''bash
+nmap -sC -sV Ip-цели
+
+![Результат сканирования Nmap](image/nmap-scan.jpg)
