@@ -52,7 +52,7 @@ search CVE-2025-32432
 
 Нам нужно стабилизировать оболочку.Для этого выполним команду:
 
-'''meterpreter>
+
 
 python3 -c 'import pty; pty.spawn("/bin/bash")'
 
