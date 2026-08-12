@@ -14,4 +14,4 @@
 '''bash
 nmap -sC -sV Ip-цели
 
-![Результат сканирования Nmap](image/.jpg)
+![Результат сканирования Nmap](image/nmapscan.jpg)
