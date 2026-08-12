@@ -33,7 +33,7 @@ gobuster dir -u  http://IP-цели -w /usr/share/wordlists/dirb/common.txt
 gobuster vhost -u URL -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt --append-domain -k
 
 
-![Результат сканирования Gobuster](image/.jpg)
+![Результат сканирования Gobuster](image/gobusterscan2.jpg)
 
 
 И в итоге мы нашли кое какой поддомен
