@@ -21,4 +21,8 @@ nmap -sC -sV Ip-цели
 Попробую перечислить конечные точки с помощью Gobuster:
 
 '''bash
+gobuster dir -u  http://IP-цели -w /usr/share/wordlists/dirb/common.txt
+
+![Результат сканирования Gobuster](image/gobusterscan1.jpg)
+
 
