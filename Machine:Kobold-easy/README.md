@@ -30,7 +30,7 @@ gobuster dir -u  http://IP-цели -w /usr/share/wordlists/dirb/common.txt
 В таком случае будет логтчно попробывать перечислить поддомены:
 
 '''bash
-gobuster vhost -u https://kobold.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt --append-domain -k
+gobuster vhost -u URL -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt --append-domain -k
 
 
 ![Результат сканирования Gobuster](image/.jpg)
