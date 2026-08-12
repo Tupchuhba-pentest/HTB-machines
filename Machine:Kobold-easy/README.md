@@ -30,6 +30,21 @@ gobuster dir -u  http://IP-цели -w /usr/share/wordlists/dirb/common.txt
 В таком случае будет логтчно попробывать перечислить поддомены:
 
 '''bash
+gobuster vhost -u https://kobold.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt --append-domain -k
+
+
+![Результат сканирования Gobuster](image/.jpg)
+
+
+И в итоге мы нашли кое какой поддомен
+
+
+
+##Тупики (DeadEnds)
+
+1.На моменте перечисления поддоменов я надолго застрял так как команда "gobuster dns -d 10.129.102.41 -w /usr/share/seclists/Discovery/DNS/dns-Jhaddix.txt  --wildcard" не выдавала никаких результатов.Я думал что дело в списке и мне пришлось воспользоватья подсказкой.Оказалось что машины настроены так, что поддомены существуют только на самом сервере и не проприсаны в публичом DNS, поэтому нужноя команда это "gobuster vhost -u https://kobold.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt --append-domain". Но и тут меня встретила ошибка связанная с проверкой SSL сертификата. Суть в том что Gobuster когда проверял ssl сертификат выдал ошибку так как на HTB они самоподписаные и необходимо добвать флаг "-k" который отменять проверку.
+
+
 
 
 
