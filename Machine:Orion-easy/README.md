@@ -68,7 +68,7 @@ mysql -u root -p пароль
 
 Заходим туда командой "use orion" и раскрываем все столбцы "show tables;"
 
-![bd](image/.jpg)
+![bd](image/basedata.jpg)
 
 Заходим в таблицу users командой "select * from users;" находим пользователя с хэшом.
 
