@@ -45,7 +45,7 @@ gobuster vhost -u URL -w /usr/share/seclists/Discovery/DNS/subdomains-top1millio
 
 Для этого включаю прокси сервер в настройках своего firefox который связан с Burp и перезватываю один из запросов с помощью Burp отправляя его в Repeater.Там же я меняю формат с GET на POST добавляя /api/mcp/connect/ и нужно задать поле "Content-type:application/json" для отправки именно в формате JSON.Делаем пробел после заголовка и формируем reverse shell.Его я взял с сайта "Online reverse shell". Далее включаю прослушку командой "nc -lvnp порт который слушаем".Повторно отправляем форму и получаем оболочку
 
-![Получение оболочки](image/burp.jpg)
+![Получение оболочки](image/burb.jpg)
 
 
 
