@@ -49,7 +49,7 @@ gobuster vhost -u URL -w /usr/share/seclists/Discovery/DNS/subdomains-top1millio
 
 Зайдя в домашний котолог мы сразу забираем первый флаг!
 
-далее стаьилизируем оболочку командой:
+далее стабилизируем оболочку командой:
 
 '''bash
 
