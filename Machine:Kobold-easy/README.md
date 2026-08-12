@@ -51,8 +51,11 @@ gobuster vhost -u URL -w /usr/share/seclists/Discovery/DNS/subdomains-top1millio
 
 далее стабилизируем оболочку командой:
 
-'''bash
 
+##Повышение привилегий (PrivEsc)
+
+'''bash
+python3 -c 'import pty; pty.spawn("/bin/bash")'
 
 ##Тупики (DeadEnds)
 
