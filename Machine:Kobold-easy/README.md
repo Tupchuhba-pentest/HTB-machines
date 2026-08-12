@@ -25,9 +25,9 @@ gobuster dir -u  http://IP-цели -w /usr/share/wordlists/dirb/common.txt
 
 ![Результат сканирования Gobuster](image/gobusterscan1.jpg)
 
-Мы види код ошибки 301, который говорит нам о том, что сайт перенаправляет нас вечно на главнуюю
+Мы види код ошибки 301, который говорит нам о том, что сайт перенаправляет нас вечно на главную страницу
 
-В таком случае будет логтчно попробывать перечислить поддомены:
+В таком случае будет логично попробывать перечислить поддомены:
 
 '''bash
 gobuster vhost -u URL -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt --append-domain -k
