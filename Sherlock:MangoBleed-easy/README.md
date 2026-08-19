@@ -40,6 +40,16 @@ grep accepted<"лога mongodb"
 
 ![firstexploat](image/beginexp.jpg)
 
+Также устонавливал в сумме 75260 соединений
+Это можно проверить командой:
+
+```bash
+grep  "Connection"<"лога mongodb" | wc -l
+```
+
+![allconnection](image/allconn.jpg)
+
+
 
 
 
