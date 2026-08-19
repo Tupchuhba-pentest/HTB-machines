@@ -11,26 +11,26 @@
 
 Запускаем nmap сканирование:
 
-'''bash
+```bash
 nmap -sC -sV Ip-цели
-
+```
 ![Результат сканирования Nmap](image/nmapscan.jpg)
 
 Порт 80 открыт, значит у цели есть сайт. 
 Попробую перечислить конечные точки с помощью Gobuster:
 
-'''bash
+```bash
 gobuster dir -u  http://IP-цели -w /usr/share/wordlists/dirb/common.txt
-
+```
 ![Результат сканирования Gobuster](image/gobusterscan1.jpg)
 
 Мы види код ошибки 301, который говорит нам о том, что сайт перенаправляет нас вечно на главную страницу
 
 В таком случае будет логично попробывать перечислить поддомены:
 
-'''bash
+```bash
 gobuster vhost -u URL -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt --append-domain -k
-
+```
 
 ![Результат сканирования Gobuster](image/gobusterscan2.jpg)
 
@@ -53,9 +53,9 @@ gobuster vhost -u URL -w /usr/share/seclists/Discovery/DNS/subdomains-top1millio
 
 далее стабилизируем оболочку командой:
 
-'''bash
+```bash
 python3 -c 'import pty; pty.spawn("/bin/bash")'
-
+```
 ##Тупики (DeadEnds)
 
 1.На моменте перечисления поддоменов я надолго застрял так как команда "gobuster dns -d IP-цели -w /usr/share/seclists/Discovery/DNS/dns-Jhaddix.txt  --wildcard" не выдавала никаких результатов. Я думал что дело в списке и мне пришлось воспользоваться подсказкой. Оказалось что машины настроены так, что поддомены существуют только на самом сервере и не прописаны в публичном DNS, поэтому нужная команда это "gobuster vhost -u URL -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt --append-domain". Но и тут меня встретила ошибка связанная с проверкой SSL сертификата. Суть в том что Gobuster когда проверял ssl сертификат выдал ошибку так как на HTB они самоподписаные и необходимо добавить флаг "-k" который отменять проверку.
