@@ -46,8 +46,6 @@ gobuster vhost -u URL -w /usr/share/seclists/Discovery/DNS/subdomains-top1millio
 
 ![Получение оболочки](image/burb.jpg)
 
-Зайдя в домашний каталог мы сразу забираем первый флаг!
-
 
 ##Повышение привилегий (PrivEsc)
 
@@ -56,6 +54,8 @@ gobuster vhost -u URL -w /usr/share/seclists/Discovery/DNS/subdomains-top1millio
 ```bash
 python3 -c 'import pty; pty.spawn("/bin/bash")'
 ```
+Зайдя в домашний каталог мы сразу забираем первый флаг!
+
 ##Тупики (DeadEnds)
 
 1.На моменте перечисления поддоменов я надолго застрял так как команда "gobuster dns -d IP-цели -w /usr/share/seclists/Discovery/DNS/dns-Jhaddix.txt  --wildcard" не выдавала никаких результатов. Я думал что дело в списке и мне пришлось воспользоваться подсказкой. Оказалось что машины настроены так, что поддомены существуют только на самом сервере и не прописаны в публичном DNS, поэтому нужная команда это "gobuster vhost -u URL -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt --append-domain". Но и тут меня встретила ошибка связанная с проверкой SSL сертификата. Суть в том что Gobuster когда проверял ssl сертификат выдал ошибку так как на HTB они самоподписаные и необходимо добавить флаг "-k" который отменять проверку.
