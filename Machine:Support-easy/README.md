@@ -27,3 +27,6 @@ nmap -sV -sC "IP-цели"
 
 ![Результат сканирования SMBclient](image/smbclient.jpg)
 
+Из всех нестондартных Sharname - это явно "support-tools".
+
+
