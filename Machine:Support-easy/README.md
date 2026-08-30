@@ -12,3 +12,4 @@
 nmap -sV -sC "IP-цели"
 ```
 
+![Результат сканирования Nmap](image/nmap-scan.jpg)
